@@ -1,0 +1,6 @@
+features/
+plugins/
+
+*.html
+*.css
+resources/
