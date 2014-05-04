@@ -16,7 +16,7 @@
   <properties>
     <tycho-version>0.20.0</tycho-version>
     <tycho-extras-version>${tycho-version}</tycho-extras-version>
-    <tycho.scmUrl>scm:git:git@github.com:Orion1979/show-shortcuts.git</tycho.scmUrl>
+    <tycho.scmUrl>scm:git:git@github.com:chgeo/show-shortcuts.git</tycho.scmUrl>
     <os-jvm-flags/>
   </properties>
 
@@ -135,11 +135,13 @@
          <artifactId>tycho-p2-plugin</artifactId>
          <version>${tycho-version}</version>
          <configuration>
+<!--
            <baselineRepositories>
              <repository>
                <url>http://chgeo.github.io/show-shortcuts/</url>
              </repository>
            </baselineRepositories>
+-->
          </configuration>
        </plugin>
       <plugin>
