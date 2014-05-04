@@ -19,6 +19,7 @@
     <tycho.scmUrl>scm:git:git@github.com:Orion1979/show-shortcuts.git</tycho.scmUrl>
     <os-jvm-flags/>
   </properties>
+
   <repositories>
     <repository>
       <id>eclipse-kepler</id>
@@ -60,6 +61,7 @@
         <configuration>
           <resolver>p2</resolver>
           <executionEnvironment>JavaSE-1.6</executionEnvironment>
+          <pomDependencies>consider</pomDependencies>
           <environments>
             <environment>
               <os>linux</os>
@@ -142,6 +144,40 @@
         <os-jvm-flags>-XstartOnFirstThread</os-jvm-flags>
       </properties>
     </profile>
-  </profiles>
+
+  <profile>
+    <id>sign</id>
+    <activation>
+      <file><exists>${basedir}/../keystore.jks</exists></file>
+    </activation>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jarsigner-plugin</artifactId>
+          <version>1.2</version>
+          <configuration>
+            <keystore>${basedir}/../keystore.jks</keystore>
+            <alias>ShowShortcuts</alias>
+            <arguments>
+              <argument>-tsa</argument>
+              <argument>https://timestamp.geotrust.com/tsa</argument>
+            </arguments>
+          </configuration>
+         <executions>
+           <execution>
+             <id>sign</id>
+             <phase>verify</phase>
+             <goals>
+               <goal>sign</goal>
+             </goals>
+           </execution>
+         </executions>
+       </plugin>
+      </plugins>
+    </build>
+  </profile>
+
+</profiles>
 
 </project>
