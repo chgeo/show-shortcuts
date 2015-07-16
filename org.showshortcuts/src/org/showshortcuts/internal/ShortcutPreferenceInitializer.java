@@ -11,6 +11,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 public class ShortcutPreferenceInitializer extends AbstractPreferenceInitializer {
 
 	public static final String PREF_KEY_SHORTCUTS_ENABLED = "enabled"; //$NON-NLS-1$
+	private static final String PREF_DEFAULT_SHORTCUTS_ENABLED = Activator.PLUGIN_ID + "." + PREF_KEY_SHORTCUTS_ENABLED; //$NON-NLS-1$
 	public static final String PREF_KEY_MOUSE_TRIGGER_ENABLED = "enabled_mouseTrigger"; //$NON-NLS-1$
 
 	public static final String PREF_KEY_TIME_TO_CLOSE = "timeToClose"; //$NON-NLS-1$
@@ -22,7 +23,8 @@ public class ShortcutPreferenceInitializer extends AbstractPreferenceInitializer
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 
-		store.setDefault(PREF_KEY_SHORTCUTS_ENABLED, true);
+		boolean enabledDefault = Boolean.parseBoolean(System.getProperty(PREF_DEFAULT_SHORTCUTS_ENABLED, "true")); //$NON-NLS-1$
+		store.setDefault(PREF_KEY_SHORTCUTS_ENABLED, enabledDefault);
 		store.setDefault(PREF_KEY_MOUSE_TRIGGER_ENABLED, false);
 		store.setDefault(PREF_KEY_TIME_TO_CLOSE, 5000);
 		store.setDefault(PREF_KEY_SHOW_DESCRIPTION, true);
