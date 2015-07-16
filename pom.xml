@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.showshortcuts</groupId>
   <artifactId>parent</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>Parent</name>
   <packaging>pom</packaging>
 
@@ -14,7 +14,7 @@
   </modules>
 
   <properties>
-    <tycho-version>0.20.0</tycho-version>
+    <tycho-version>0.23.0</tycho-version>
     <tycho-extras-version>${tycho-version}</tycho-extras-version>
     <tycho.scmUrl>scm:git:git@github.com:chgeo/show-shortcuts.git</tycho.scmUrl>
     <os-jvm-flags/>
