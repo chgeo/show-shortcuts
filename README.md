@@ -6,5 +6,5 @@ This is a handy Eclipse plugin that shows the currently pressed keyboard shortcu
 Use this URL to install it in Eclipse using *Help -> Install New Software*:
 
 ````
-http://chgeo.github.io/show-shortcuts/
+https://chgeo.github.io/show-shortcuts/
 ````
