@@ -26,7 +26,7 @@ public class ShortcutPreferenceInitializer extends AbstractPreferenceInitializer
 		boolean enabledDefault = Boolean.parseBoolean(System.getProperty(PREF_DEFAULT_SHORTCUTS_ENABLED, "true")); //$NON-NLS-1$
 		store.setDefault(PREF_KEY_SHORTCUTS_ENABLED, enabledDefault);
 		store.setDefault(PREF_KEY_MOUSE_TRIGGER_ENABLED, false);
-		store.setDefault(PREF_KEY_TIME_TO_CLOSE, 5000);
+		store.setDefault(PREF_KEY_TIME_TO_CLOSE, 3000);
 		store.setDefault(PREF_KEY_SHOW_DESCRIPTION, true);
 	}
 
