@@ -14,7 +14,7 @@
   </modules>
 
   <properties>
-    <tycho-version>0.23.0</tycho-version>
+    <tycho-version>1.3.0</tycho-version>
     <tycho-extras-version>${tycho-version}</tycho-extras-version>
     <tycho.scmUrl>scm:git:git@github.com:chgeo/show-shortcuts.git</tycho.scmUrl>
     <os-jvm-flags/>
@@ -43,7 +43,7 @@
         <plugin>
            <groupId>org.eclipse.tycho</groupId>
            <artifactId>tycho-versions-plugin</artifactId>
-           <version>0.23.0</version>
+           <version>${tycho-version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
